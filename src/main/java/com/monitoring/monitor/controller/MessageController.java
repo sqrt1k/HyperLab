@@ -1,5 +1,7 @@
 package com.monitoring.monitor.controller;
 
+import com.monitoring.monitor.model.interfaces.UserRepository;
+import com.monitoring.monitor.service.UserService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -11,6 +13,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 @Component
 @Log4j2
 public class MessageController extends TelegramLongPollingBot {
+    private final UserService userService;
     public MessageController(@Value("${BOT_TOKEN}") String botToken) {
         super(botToken);
     }
