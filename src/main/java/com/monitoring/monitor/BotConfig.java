@@ -1,7 +1,7 @@
 package com.monitoring.monitor;
 
 import com.monitoring.monitor.controller.MessageController;
-import lombok.Value;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
@@ -10,6 +10,7 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 
 @Configuration
+@EnableAutoConfiguration
 public class BotConfig {
     @Bean
     public TelegramBotsApi telegramBotsApi(MessageController messageController){
